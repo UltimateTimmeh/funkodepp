@@ -585,7 +585,7 @@ public:
     csCamera = CoordSys_LookAt(vCameraPosition, vCameraTarget, vCameraUp);
 
     // Camera settings.
-    fFovDeg = 60.0f; fNear = 0.1f; fFar = 1000.0f;
+    fFovDeg = 90.0f; fNear = 0.1f; fFar = 1000.0f;
     fAspectRatio = (float)ScreenWidth() / (float)ScreenHeight();
 
     // Camera projection matrix. Needs to be calculated only once.
