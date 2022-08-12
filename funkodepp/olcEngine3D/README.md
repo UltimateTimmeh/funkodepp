@@ -49,6 +49,7 @@ $$O_l = \begin{bmatrix} {O_l}_x \cr {O_l}_y \end{bmatrix},
 We can draw this configuration as follows:
 
 > **Warning**
+>
 > Add figure
 
 Based on this figure we can see that, relative to world space, the point $P_w$ can be written as
