@@ -69,12 +69,12 @@ an additional axis to the coordinate systems and by adding an extra coordinate t
 We start with an object in 2D, defind by a set of vertices which are connected by lines. Suppose we
 kow that one of the object's vertices has the following coordinates in local space:
 
-$$P_l = \begin{bmatrix} {P_l}_u \cr {P_l}_v \end{bmatrix}$$
+$$P = \begin{bmatrix} P_u \cr P_v \end{bmatrix}$$
 
 That same vertex has the following unknown coordinates relative to world space which we would like
 to calculate:
 
-$$P_w = \begin{bmatrix} {P_w}_x \cr {P_w}_y \end{bmatrix}$$
+$$P = \begin{bmatrix} P_x \cr P_y \end{bmatrix}$$
 
 To perform the transformation, we should also know the position and orientation of the local coordinate
 system relative to world space. In other words, we should also know the coordinates of the local
@@ -94,24 +94,24 @@ We can draw this setup as follows:
 >
 > Add figure
 
-Based on this figure we can see that, relative to world space, the point $P_w$ can be written as
+Based on this figure we can see that, relative to world space, the point $P$ can be written as
 the following sum of vectors:
 
-$$P_w = o + {P_l}_u \cdot \mathbf{u} + {P_l}_v \cdot \mathbf{v}$$
+$$P = o + P_u \cdot \mathbf{u} + P_v \cdot \mathbf{v}$$
 
 When we decompose this sum of vectors into the sums to obtain its individual $x$ and $y$ components:
 
-$${P_w}_x = {P_l}_u \cdot u_x + {P_l}_v \cdot v_x + o_x$$
+$$P_x = P_u \cdot u_x + P_v \cdot v_x + o_x$$
 
-$${P_w}_y = {P_l}_u \cdot u_y + {P_l}_v \cdot v_y + o_y$$
+$$P_y = P_u \cdot u_y + P_v \cdot v_y + o_y$$
 
 Then we see that we can write these equations as a multiplication of a matrix with a vector:
 
-$$\begin{bmatrix} {P_w}_x \cr {P_w}_y \cr 1 \end{bmatrix} =
+$$\begin{bmatrix} P_x \cr P_y \cr 1 \end{bmatrix} =
 \begin{bmatrix} u_x & v_x & o_x \cr
                 u_y & v_y & o_y \cr
                 0   & 0   & 1   \end{bmatrix} \cdot
-\begin{bmatrix} {P_l}_u \cr {P_l}_v \cr 1 \end{bmatrix}$$
+\begin{bmatrix} P_u \cr P_v \cr 1 \end{bmatrix}$$
 
 > **Note**
 >
@@ -137,9 +137,9 @@ can intuitively position, orient and move each of them relative to the world and
 To get the equivalent equation in 3D, we can simply extend the vectors and transformation matrix with
 an additional coordinate and axis as follows:
 
-$$\begin{bmatrix} {P_w}_x \cr {P_w}_y \cr {P_w}_z \cr 1 \end{bmatrix} =
+$$\begin{bmatrix} P_x \cr P_y \cr P_z \cr 1 \end{bmatrix} =
 \begin{bmatrix} u_x & v_x & w_x & o_x \cr
                 u_y & v_y & w_y & o_y \cr
                 u_z & v_z & w_z & o_z \cr
                 0   & 0   & 0   & 1       \end{bmatrix} \cdot
-\begin{bmatrix} {P_l}_u \cr {P_l}_v \cr {P_l}_w \cr 1 \end{bmatrix}$$
+\begin{bmatrix} P_u \cr P_v \cr P_w \cr 1 \end{bmatrix}$$
