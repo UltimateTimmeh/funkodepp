@@ -42,4 +42,4 @@ space by representing its origin as a point in world space and its axes as vecto
 In other words: we know the coordinates of the local coordinate system's origin $O$ (point) and axes
 (vectors) in world space:
 
-$$\vv{\bm{x}}$$
+$$\mathbf{x}$$
