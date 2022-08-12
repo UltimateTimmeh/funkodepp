@@ -54,4 +54,4 @@ We can draw this configuration as follows:
 Based on this figure we can see that, relative to world space, the point $P_w$ can be written as
 the following sum of vectors:
 
-$$P_w = O_l + {P_l}_x * \mathbf{x_l} + {P_l}_y * \mathbf{y_l}$$
+$$P_w = O_l + {P_l}_x \cdot \mathbf{x_l} + {P_l}_y \cdot \mathbf{y_l}$$
