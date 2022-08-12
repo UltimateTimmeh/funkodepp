@@ -76,8 +76,8 @@ words, we also know the coordinates of the local coordinate system's origin $O_l
 $\mathbf{x_l}$ and $\mathbf{y_l}$ (vectors) relative to world space:
 
 $$O_l = \begin{bmatrix} {O_l}_x \cr {O_l}_y \end{bmatrix},
-\mathbf{x_l} = \begin{bmatrix} \mathbf{x_l}_x \cr \mathbf{x_l}_y \end{bmatrix},
-\mathbf{y_l} = \begin{bmatrix} \mathbf{y_l}_x \cr \mathbf{y_l}_y \end{bmatrix}$$
+\mathbf{x_l} = \begin{bmatrix} {x_l}_x \cr {x_l}_y \end{bmatrix},
+\mathbf{y_l} = \begin{bmatrix} {y_l}_x \cr {y_l}_y \end{bmatrix}$$
 
 We can draw this configuration as follows:
 
@@ -91,6 +91,10 @@ the following sum of vectors:
 $$P_w = O_l + {P_l}_x \cdot \mathbf{x_l} + {P_l}_y \cdot \mathbf{y_l}$$
 
 When we decompose this into its individual $x$ and $y$ components:
+
+$${P_w}_x = {P_l}_x \cdot {x_l}_x + {P_l}_y \cdot {y_l}_x + {O_l}_x$$
+
+$${P_w}_y = {P_l}_x \cdot {x_l}_y + {P_l}_y \cdot {y_l}_y + {O_l}_y$$
 
 Then we see that we can write these equations as a multiplication of a matrix with a vector:
 
