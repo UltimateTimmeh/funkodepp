@@ -16,30 +16,30 @@ a transformation matrix with a vector to obtain the coordinates of that vector i
 
 ### From local space to world space
 
-Suppose that we have an object to which a local coordinate system is attached. The origin of that local
-coordinate system is at the center of the object, the local x-axis points forwards, the local y-axis
-points to the left and the local z-axis points up. When we know the coordinates of that object's vertices
-relative to that local coordinate system, then  we say that we know the coordinates in "local space".
-When we know the coordinates of that object relative to the world's coordinate system, then we say that
-we know the coordinates in "world space". But how do we transform the coordinates from local space
-to world space?
+Suppose that we have an object to which a local coordinate system is attached. The origin $O$ of that
+local coordinate system is at the center of the object, the local x-axis $\mathbf{x_l}$ points forwards,
+the local y-axis $\mathbf{y_l}$ points to the left and the local z-axis $\mathbf{x_l}$ points up. When
+we know the coordinates of that object's vertices relative to that local coordinate system, then we say
+that we know the coordinates in "local space". When we know the coordinates of that object's vertices
+relative to the world's coordinate system, then we say that we know the coordinates in "world space".
+But how do we transform the coordinates from local space to world space?
 
-For simplicity's sake we will start deriving the equations to tranform the coordinates from local
-space to world space in 2D. At the end, we can easily expand the derived equations to 3D simply
-by adding an additional axis to the coordinate systems and coordinate to the vertices.
+For simplicity's sake we will start deriving the equations to tranform the coordinates from local space
+to world space in 2D. At the end, we can easily expand the derived equations to 3D simply by adding an
+additional axis to the coordinate systems and coordinate to the vertices.
 
-So we start with an object in 2D. Suppose that we kow that one of that object's vertices has the
-following coordinates in local space:
+So we start with an object in 2D. Suppose we kow that one of that object's vertices has the following
+coordinates in local space:
 
-$$P'=\begin{bmatrix}x' \cr y'\end{bmatrix}$$
+$$P_l=\begin{bmatrix}x_l \cr y_l\end{bmatrix}$$
 
 In world space, that same vertex has the following coordinates:
 
 $$P=\begin{bmatrix}x \cr y\end{bmatrix}$$
 
-We can unambiguously define the position and orientation of the local coordinate system in world
-space by representing its origin as a point in world space and its axes as vectors in world space.
-In other words: we know the coordinates of the local coordinate system's origin $O$ (point) and axes
-(vectors) in world space:
+We can unambiguously define the position and orientation of the local coordinate system in world space
+by representing its origin as a point in world space and its axes as vectors in world space. In other
+words: we know the coordinates of the local coordinate system's origin $O$ (point) and axes (vectors)
+in world space:
 
-$$\mathbf{x_l}=\begin{bmatrix}x_{l,x} \cr x_{l,y}\end{bmatrix}$$
+$$\mathbf{x_l}=\begin{bmatrix}\mathbf{x_l}_x \cr \mathbf{x_l}_y\end{bmatrix}$$
