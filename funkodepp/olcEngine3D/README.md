@@ -72,8 +72,8 @@ $$P_w = \begin{bmatrix} {P_w}_x \cr {P_w}_y \end{bmatrix}$$
 
 We can unambiguously define the position and orientation of the local coordinate system in world space
 by representing its origin as a point in world space and its axes as vectors in world space. In other
-words, we also know the coordinates of the local coordinate system's origin $O_l$ (point) and axes
-$\mathbf{x_l}$ and $\mathbf{y_l}$ (vectors) relative to world space:
+words, we should also know the coordinates of the local coordinate system's origin $O_l$ (point) and
+axes $\mathbf{x_l}$ and $\mathbf{y_l}$ (vectors) relative to world space:
 
 $$O_l = \begin{bmatrix} {O_l}_x \cr {O_l}_y \end{bmatrix},
 \mathbf{x_l} = \begin{bmatrix} {x_l}_x \cr {x_l}_y \end{bmatrix},
@@ -97,6 +97,10 @@ $${P_w}_x = {P_l}_x \cdot {x_l}_x + {P_l}_y \cdot {y_l}_x + {O_l}_x$$
 $${P_w}_y = {P_l}_x \cdot {x_l}_y + {P_l}_y \cdot {y_l}_y + {O_l}_y$$
 
 Then we see that we can write these equations as a multiplication of a matrix with a vector:
+
+$$\begin{bmatrix} {P_w}_x \cr {P_w}_y \end{bmatrix} =
+\begin{bmatrix} {x_l}_x & {y_l}_x & {O_l}_x \cr {x_l}_y & {y_l}_y & {O_l}_y \cr 0 & 0 & 1 \end{bmatrix} \cdot
+\begin{bmatrix} {P_l}_x \cr {P_l}_y \end{bmatrix}$$
 
 > **Note**
 >
