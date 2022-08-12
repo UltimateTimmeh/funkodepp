@@ -33,6 +33,13 @@ following coordinates in local space:
 
 $$P'=\begin{bmatrix}x' \cr y'\end{bmatrix}$$
 
-In world space, that same point has the following coordinates:
+In world space, that same vertex has the following coordinates:
 
 $$P=\begin{bmatrix}x \cr y\end{bmatrix}$$
+
+We can unambiguously define the position and orientation of the local coordinate system in world
+space by representing its origin as a point in world space and its axes as vectors in world space.
+In other words: we know the coordinates of the local coordinate system's origin $O$ (point) and axes
+(vectors) in world space:
+
+$$\vv{\bm{x}}$$
