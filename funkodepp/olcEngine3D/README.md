@@ -22,7 +22,7 @@ points up. We know the coordinates of that object's vertices in local space. Sup
 vertices has the following local coordinates:
 
 ```math
-P'=\begin{bmatrix}x'\\y'\\z'\end{bmatrix}
+\sqrt{3}
 ```
 
 The object can be positioned and oriented in world space by stating the coordinates of the local
