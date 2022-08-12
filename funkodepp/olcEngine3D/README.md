@@ -98,9 +98,9 @@ $${P_w}_y = {P_l}_x \cdot {x_l}_y + {P_l}_y \cdot {y_l}_y + {O_l}_y$$
 
 Then we see that we can write these equations as a multiplication of a matrix with a vector:
 
-$$\begin{bmatrix} {P_w}_x \cr {P_w}_y \end{bmatrix} =
+$$\begin{bmatrix} {P_w}_x \cr {P_w}_y \cr 1 \end{bmatrix} =
 \begin{bmatrix} {x_l}_x & {y_l}_x & {O_l}_x \cr {x_l}_y & {y_l}_y & {O_l}_y \cr 0 & 0 & 1 \end{bmatrix} \cdot
-\begin{bmatrix} {P_l}_x \cr {P_l}_y \end{bmatrix}$$
+\begin{bmatrix} {P_l}_x \cr {P_l}_y \cr 1 \end{bmatrix}$$
 
 > **Note**
 >
