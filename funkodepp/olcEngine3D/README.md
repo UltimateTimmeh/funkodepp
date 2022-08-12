@@ -63,6 +63,7 @@ When we decompose this into its individual $x$ and $y$ components:
 Then we see that we can write these equations as a multiplication of a matrix with a vector:
 
 > **Note**
+>
 > We've added a fictional third component to each vector, which is necessary for the matrix
 > multiplication to make sense. In 2D, the value of this fictional third vector component is always
 > $1$.
