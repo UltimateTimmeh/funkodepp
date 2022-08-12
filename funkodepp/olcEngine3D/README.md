@@ -21,7 +21,7 @@ object, the local x-axis points forwards, the local y-axis points to the left an
 points up. We know the coordinates of that object's vertices in local space. Suppose that one of those
 vertices has the following local coordinates:
 
-$$\sqrt{3}$$
+$$\begin{bmatrix}a & b\\c & d\end{bmatrix}$$
 
 The object can be positioned and oriented in world space by stating the coordinates of the local
 coordinate system's origin and axes in world space.
