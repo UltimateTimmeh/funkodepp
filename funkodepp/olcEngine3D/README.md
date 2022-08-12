@@ -80,8 +80,9 @@ by representing its origin as a point in world space and its axes as vectors rel
 In other words, we should also know the coordinates of the local coordinate system's origin $o$ (point)
 and axes $\mathbf{u}$ and $\mathbf{v}$ (vectors) relative to world space:
 
+$$o = \begin{bmatrix} o_x \cr o_y \end{bmatrix}$$
+
 $$
-o = \begin{bmatrix} o_x \cr o_y \end{bmatrix},
 \mathbf{u} = \begin{bmatrix} u_x \cr u_y \end{bmatrix},
 \mathbf{v} = \begin{bmatrix} v_x \cr v_y \end{bmatrix}
 $$
