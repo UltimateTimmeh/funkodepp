@@ -42,7 +42,7 @@ by representing its origin as a point in world space and its axes as vectors in 
 words: we know the coordinates of the local coordinate system's origin $O$ (point) and axes (vectors)
 in world space:
 
-$$O_l = \begin{bmatrix} {O_l}_x \cr {O_l}_y \end{bmatrix}$,
+$$O_l = \begin{bmatrix} {O_l}_x \cr {O_l}_y \end{bmatrix},
 \mathbf{x_l}=\begin{bmatrix}\mathbf{x_l}_x \cr \mathbf{x_l}_y\end{bmatrix},
 \mathbf{y_l}=\begin{bmatrix}\mathbf{y_l}_x \cr \mathbf{y_l}_y\end{bmatrix}$$
 
