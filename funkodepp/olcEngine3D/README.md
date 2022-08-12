@@ -46,3 +46,8 @@ $$O_l = \begin{bmatrix} {O_l}_x \cr {O_l}_y \end{bmatrix},
 \mathbf{x_l}=\begin{bmatrix}\mathbf{x_l}_x \cr \mathbf{x_l}_y\end{bmatrix},
 \mathbf{y_l}=\begin{bmatrix}\mathbf{y_l}_x \cr \mathbf{y_l}_y\end{bmatrix}$$
 
+We can draw this configuration as follows:
+
+> **Note**
+> Add figure
+
