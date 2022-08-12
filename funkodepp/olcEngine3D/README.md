@@ -31,23 +31,27 @@ additional axis to the coordinate systems and coordinate to the vertices.
 So we start with an object in 2D. Suppose we kow that one of that object's vertices has the following
 coordinates in local space:
 
-$$P_l=\begin{bmatrix}x_l \cr y_l\end{bmatrix}$$
+$$P_l = \begin{bmatrix} {P_l}_x \cr {P_l}_y \end{bmatrix}$$
 
 In world space, that same vertex has the following coordinates:
 
-$$P=\begin{bmatrix}x \cr y\end{bmatrix}$$
+$$P_w = \begin{bmatrix} {P_w}_x \cr {P_w}_y \end{bmatrix}$$
 
 We can unambiguously define the position and orientation of the local coordinate system in world space
 by representing its origin as a point in world space and its axes as vectors in world space. In other
-words: we know the coordinates of the local coordinate system's origin $O$ (point) and axes (vectors)
-in world space:
+words, we know the coordinates of the local coordinate system's origin $O_l$ (point) and axes
+$\mathbf{x_l}$ and $\mathbf{y_l}$ (vectors) in world space:
 
 $$O_l = \begin{bmatrix} {O_l}_x \cr {O_l}_y \end{bmatrix},
-\mathbf{x_l}=\begin{bmatrix}\mathbf{x_l}_x \cr \mathbf{x_l}_y\end{bmatrix},
-\mathbf{y_l}=\begin{bmatrix}\mathbf{y_l}_x \cr \mathbf{y_l}_y\end{bmatrix}$$
+\mathbf{x_l} = \begin{bmatrix} \mathbf{x_l}_x \cr \mathbf{x_l}_y \end{bmatrix},
+\mathbf{y_l} = \begin{bmatrix} \mathbf{y_l}_x \cr \mathbf{y_l}_y \end{bmatrix}$$
 
 We can draw this configuration as follows:
 
 > **Note**
 > Add figure
 
+Based on this figure we can see that, relative to world space, the point $P_w$ can be written as
+the following sum of vectors:
+
+$$P_w = O_l + {P_l}_x * \mathbf{x_l} + {P_l}_y * \mathbf{y_l}$$
