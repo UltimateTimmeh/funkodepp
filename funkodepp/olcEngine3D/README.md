@@ -48,7 +48,7 @@ $$O_l = \begin{bmatrix} {O_l}_x \cr {O_l}_y \end{bmatrix},
 
 We can draw this configuration as follows:
 
-> **Note**
+> **Warning**
 > Add figure
 
 Based on this figure we can see that, relative to world space, the point $P_w$ can be written as
@@ -62,6 +62,7 @@ When we decompose this into its individual $x$ and $y$ components:
 
 Then we see that we can write these equations as a multiplication of a matrix with a vector:
 
-Note that we've added a fictional third component to each vector, which is necessary for the matrix
-multiplication to make sense. In 2D, the value of this fictional third vector component is always
-$1$.
+> **Note**
+> We've added a fictional third component to each vector, which is necessary for the matrix
+> multiplication to make sense. In 2D, the value of this fictional third vector component is always
+> $1$.
