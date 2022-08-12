@@ -1,18 +1,51 @@
 # olcEngine3D
 
+## Introduction
+
 A simple 3D graphics engine in C++, based on the tutorial named "Code-It-Yourself 3D Graphics Engine in C++"
 by YouTube content creator javidx9.
 
+In the tutorial, javidx9 starts off deriving the necessary equations for projecting and transforming
+the coordinates of the visualized object's vertices by defining a left-handed coordinate system. Although
+this appears to be the standard for 3D computer graphics (and after having thought about it a bit more,
+I can see why), for me this is already not an intuitive way to start thinking about this problem, since
+I've worked with right-handed coordinate systems where the z-axis represents "up" practically my entire
+professional life.
+
+After following the tutorial to the letter and making some trial-and-error adjustments to at least make
+the world space coordinate system appear right-handed with an upwards-pointing z-axis, I managed to make
+it work as I would intuitively expect but I didn't know *why* it worked. So I decided to derive all the
+equations myself, starting from the assumption that the coordinate systems in local, world, camera and
+projected space are all right-handed. In the first three of those spaces, the x-axis points forwards, the
+y-axis points to the left and the z-axis points up.
+
+On top of that I wanted to add the concept of using local coordinate systems and coordinate system
+transformations to transform the vertices of an object from one space to another. I think this is a very
+intuitive method for positioning and orienting objects in your world without having to worry about the
+combination and order of the individual rotations and translations necessary to achieve the desired result.
+Especially when using 3D models, which are usually created and exported with their vertices relative to a
+local coordinate system, I think this method is very useful.
+
+In the end I managed to do derive all the necessary equations, but not before filling several A4 sheets
+with mathematical equations and hand-written examples to test the results. In order to not lose all this
+precious theory when I inevitably trash the paper once I'm sick of having to deal with it lying on my desk,
+I decided to first transfer all the knowledge contained on its surface within the README of this project.
+The result is the "Theory" section below. I hope that I have presented the concepts and maths in a way that
+is understandable to those who wish to learn about the basic projection algorithms of a 3D graphics engine
+when starting from right-handed coordinate systems.
+
+If you have any questions or see an error in what I have written down below, feel free to contact me.
+
 ## Theory
 
-### Introduction
+### Goal
 
 We want to look at an object which can be arbitrarily positioned and oriented anywhere in the world
 with a camera which can likewise be positioned and oriented anywhere else in the world, and project
 what the camera sees onto a computer screen.
 
 Achieving this goal requires a lot of math, most of which can be presented in the form of multiplying
-a transformation matrix with a vector to obtain the coordinates of that vector in a transformed space.
+a transformation matrix with a vector to obtain the coordinates of that vector relative to another space.
 
 ### From local space to world space
 
