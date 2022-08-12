@@ -16,12 +16,16 @@ a transformation matrix with a vector to obtain the coordinates of that vector i
 
 ### From local space to world space
 
-We have an object to which a local coordinate system is attached. The origin is at the center of the
-object, the local x-axis points forwards, the local y-axis points to the left and the local z-axis
-points up. We know the coordinates of that object's vertices in local space. Suppose that one of those
-vertices has the following local coordinates:
+Suppose that we have an object to which a local coordinate system is attached. The origin is at the
+center of the object, the local x-axis points forwards, the local y-axis points to the left and the
+local z-axis points up. When we know the coordinates of that object's vertices relative to that local coordinate
+system, then  we say that "we have the coordinates in local space".
 
-$$\begin{bmatrix}a & b \cr c & d\end{bmatrix}$$
+For simplicity's sake we will start deriving the equations to tranform the coordinates from local
+space to world space in 2D. At the end, we can easily expand the derived equations in 3D simply
+by adding an additional axis.
 
-The object can be positioned and oriented in world space by stating the coordinates of the local
-coordinate system's origin and axes in world space.
+We start with an object in 2D, and we knkow that one of that object's vertices has the following
+coordinates in local space:
+
+$$P'=\begin{bmatrix}x' \cr y'\end{bmatrix}$$
