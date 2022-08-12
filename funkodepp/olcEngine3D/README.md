@@ -126,3 +126,10 @@ can intuitively position, orient and move each of them relative to the world and
 
 To get the equivalent equation in 3D, we can simply extend the vectors and transformation matrix with
 an additional coordinate and axis as follows:
+
+$$\begin{bmatrix} {P_w}_x \cr {P_w}_y \cr {P_w}_z \cr 1 \end{bmatrix} =
+\begin{bmatrix} {x_l}_x & {y_l}_x & {z_l}_x & {O_l}_x \cr
+                {x_l}_y & {y_l}_y & {z_l}_y & {O_l}_y \cr
+                {x_l}_z & {y_l}_z & {z_l}_z & {O_l}_z \cr
+                0       & 0       & 0       & 1 \end{bmatrix} \cdot
+\begin{bmatrix} {P_l}_x \cr {P_l}_y \cr {P_l}_z \cr 1 \end{bmatrix}$$
