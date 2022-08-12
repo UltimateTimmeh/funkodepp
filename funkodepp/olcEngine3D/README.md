@@ -7,8 +7,8 @@ by YouTube content creator javidx9.
 
 ### Introduction
 
-We want to look at an object which can be arbitrarily positioned and oriented anywhere in world space
-with a camera which can likewise be positioned and oriented anywhere else in world space, and project
+We want to look at an object which can be arbitrarily positioned and oriented anywhere in the world
+with a camera which can likewise be positioned and oriented anywhere else in the world, and project
 what the camera sees onto a computer screen.
 
 Achieving this goal requires a lot of math, most of which can be presented in the form of multiplying
@@ -16,16 +16,23 @@ a transformation matrix with a vector to obtain the coordinates of that vector i
 
 ### From local space to world space
 
-Suppose that we have an object to which a local coordinate system is attached. The origin is at the
-center of the object, the local x-axis points forwards, the local y-axis points to the left and the
-local z-axis points up. When we know the coordinates of that object's vertices relative to that local coordinate
-system, then  we say that "we have the coordinates in local space".
+Suppose that we have an object to which a local coordinate system is attached. The origin of that local
+coordinate system is at the center of the object, the local x-axis points forwards, the local y-axis
+points to the left and the local z-axis points up. When we know the coordinates of that object's vertices
+relative to that local coordinate system, then  we say that we know the coordinates in "local space".
+When we know the coordinates of that object relative to the world's coordinate system, then we say that
+we know the coordinates in "world space". But how do we transform the coordinates from local space
+to world space?
 
 For simplicity's sake we will start deriving the equations to tranform the coordinates from local
-space to world space in 2D. At the end, we can easily expand the derived equations in 3D simply
-by adding an additional axis.
+space to world space in 2D. At the end, we can easily expand the derived equations to 3D simply
+by adding an additional axis to the coordinate systems and coordinate to the vertices.
 
-We start with an object in 2D, and we knkow that one of that object's vertices has the following
-coordinates in local space:
+So we start with an object in 2D. Suppose that we kow that one of that object's vertices has the
+following coordinates in local space:
 
 $$P'=\begin{bmatrix}x' \cr y'\end{bmatrix}$$
+
+In world space, that same point has the following coordinates:
+
+$$P=\begin{bmatrix}x \cr y\end{bmatrix}$$
