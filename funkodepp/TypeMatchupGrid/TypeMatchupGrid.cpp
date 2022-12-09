@@ -102,7 +102,7 @@ public:
       if (cell_selected)
       {
         int cell_state = game_grid[selected_r][selected_c];
-        game_grid[selected_r][selected_c] = std::min(cell_state+1, 3);
+        game_grid[selected_r][selected_c] = (cell_state + 1) % 4;
       }
     }
 
@@ -113,7 +113,10 @@ public:
       if (cell_selected)
       {
         int cell_state = game_grid[selected_r][selected_c];
-        game_grid[selected_r][selected_c] = std::max(cell_state-1, 0);
+        int cell_state_new = (cell_state - 1) % 4;
+        if (cell_state_new < 0)
+          cell_state_new += 4;
+        game_grid[selected_r][selected_c] = cell_state_new;
       }
     }
 
