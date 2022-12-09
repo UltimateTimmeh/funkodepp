@@ -69,13 +69,14 @@ private:
 
   // Variable for keeping score.
   int score = 0;
+  bool show_row_scores = true;
 
 public:
   bool OnUserCreate() override
   {
     // Load the type images sprites.
-    types_row = new olc::Sprite("types_row.png");
-    types_col = new olc::Sprite("types_col.png");
+    types_row = new olc::Sprite("./assets/gfx/types_row.png");
+    types_col = new olc::Sprite("./assets/gfx/types_col.png");
 
     // Populate the game grid.
     for (int r = 0; r < 18; ++r)
@@ -176,9 +177,28 @@ public:
       DrawPartialSprite(pos_x, pos_y, types_col, i*sprite_h, 0, sprite_h, sprite_w);
     }
 
-    // Draw the score.
+    // Draw the global score.
     DrawString(grid_x-65, grid_y-50, std::to_string(score), olc::WHITE, 2);
     DrawString(grid_x-45, grid_y-30, "/"+std::to_string(18*18), olc::WHITE, 1);
+
+    // Draw the score for each row.
+    if (show_row_scores)
+    {
+      int pos_x = grid_x - sprite_w - 50;
+      for (int r = 0; r < 18; ++r)
+      {
+        int row_score = 0;
+        for (int c = 0; c < 18; ++c)
+        {
+          int game_state = game_grid[r][c];
+          int expected_state = default_grid[r][c];
+          if (game_state == expected_state)
+            row_score += 1;
+        }
+        int pos_y = grid_y + r*cell_size + 10;
+        DrawString(pos_x, pos_y, std::to_string(row_score) + "/18", olc::WHITE);
+      }
+    }
 
     // Highlight the currently selected cell.
     if (cell_selected){
