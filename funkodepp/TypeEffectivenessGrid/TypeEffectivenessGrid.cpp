@@ -22,8 +22,8 @@ private:
 
   // Grid settings.
   int cell_size = 28;
-  int grid_x = (800-18*cell_size-80)/2+80;
-  int grid_y = (600-18*cell_size-80)/2+80;
+  int grid_x = 601-18*cell_size;
+  int grid_y = 584-18*cell_size;
 
   // Possible cell states.
   std::string cell_states[4] = { "0.0x", "0.5x", "1.0x", "2.0x" };
@@ -187,7 +187,7 @@ public:
     // Draw the score for each row.
     if (show_row_scores)
     {
-      int pos_x = grid_x - sprite_w - 50;
+      int pos_x = grid_x - sprite_w - 17;
       for (int r = 0; r < 18; ++r)
       {
         int row_score = 0;
@@ -199,7 +199,7 @@ public:
             row_score += 1;
         }
         int pos_y = grid_y + r*cell_size + 10;
-        DrawString(pos_x, pos_y, std::to_string(row_score) + "/18", olc::WHITE);
+        DrawString(pos_x, pos_y, std::to_string(row_score), olc::WHITE);
       }
     }
 
@@ -221,7 +221,7 @@ public:
 int main()
 {
   olcTypeMatchupGrid game;
-  if (game.Construct(800, 600, 1, 1))
+  if (game.Construct(601, 584, 1, 1))
     game.Start();
   return 0;
 }
